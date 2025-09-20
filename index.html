@@ -39,7 +39,9 @@
     html{scroll-behavior:smooth}
     .section-divider{position:relative;padding-bottom:.5rem;margin-bottom:1.25rem}
     .section-divider::after{content:"";position:absolute;left:0;bottom:0;width:4rem;height:3px;background:linear-gradient(90deg,#006400,#228B22)}
-    .hero-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 20%,rgba(0,100,0,.20),transparent),linear-gradient(#FAF5EB,#FFFFFF 60%);z-index:-1}
+    .hero-bg{position:relative;overflow:hidden}
+    .hero-bg::before{content:"";position:absolute;inset:0;background-image:url('assets/hero-borehole.png');background-size:cover;background-position:center;filter:blur(16px);transform:scale(1.08);z-index:-2}
+    .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,38,20,0.65),rgba(15,38,20,0.35)),radial-gradient(60% 60% at 50% 20%,rgba(0,100,0,.35),transparent);z-index:-1}
     .glass{backdrop-filter:saturate(1.4) blur(8px);background:rgba(255,255,255,0.65)}
     .accordion[aria-expanded="true"] + .panel{max-height:320px}
     .panel{max-height:0;overflow:hidden;transition:max-height .35s ease}
@@ -77,9 +79,7 @@
   <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-secondary grid place-items-center text-white shadow">
-          <i class="fa-solid fa-water"></i>
-        </div>
+        <img src="assets/fastmove-logo.png" alt="Fastmove Boreholes logo" class="w-12 h-12 object-contain" />
         <div class="leading-tight">
           <div class="font-heading font-semibold tracking-tight text-slate-900">FASTMOVE <span class="font-narrow tracking-wide text-primary">BOREHOLES</span></div>
           <div class="text-xs text-slate-500">Pietermaritzburg • KZN</div>
@@ -114,31 +114,32 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-8 items-center">
         <div class="lg:col-span-7">
-          <h1 class="font-heading text-4xl sm:text-5xl font-bold leading-tight text-highlight">
+          <h1 class="font-heading text-4xl sm:text-5xl font-bold leading-tight text-white">
             Your Water. Your Independence.
           </h1>
-          <p class="mt-4 text-xl text-slate-700 max-w-2xl">
+          <p class="mt-4 text-xl text-slate-100 max-w-2xl">
             Borehole siting, drilling, test-pumping, pumps, tanks & filtration for homes, farms and estates across PMB & KZN.
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="https://wa.me/27790485777" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-white px-5 py-3 rounded-xl2 shadow hover:bg-secondary">
               <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp a Quote
             </a>
-            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl2 border border-primary text-primary hover:bg-primary/10">
+            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl2 border border-white text-white hover:bg-white/10">
               <i class="fa-regular fa-calendar-check"></i> Book Site Survey
             </a>
           </div>
-          <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
-            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-primary"></i> Registered & Insured</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-helmet-safety text-primary"></i> SANS‑aligned practices</li>
-            <li class="flex items-center gap-2"><i class="fa-solid fa-gauge-high text-primary"></i> Test‑pumping & reports</li>
+          <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-200">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-white"></i> Registered & Insured</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-helmet-safety text-white"></i> SANS‑aligned practices</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-gauge-high text-white"></i> Test‑pumping & reports</li>
           </ul>
         </div>
         <div class="lg:col-span-5">
           <div class="glass rounded-2xl p-6 shadow-card">
+            <img src="assets/fastmove-logo.png" alt="Fastmove Boreholes" class="w-20 mb-3" />
             <h3 class="font-heading text-xl text-highlight">Quick Quote</h3>
             <p class="text-sm text-slate-600">Prefer messaging? Use WhatsApp or send a request here.</p>
-            <form class="mt-4 grid gap-3" method="get" action="#">
+            <form id="quoteForm" class="mt-4 grid gap-3">
               <input class="px-3 py-2 rounded-lg border border-slate-300" name="name" placeholder="Full Name" />
               <input class="px-3 py-2 rounded-lg border border-slate-300" name="phone" placeholder="Phone" />
               <select class="px-3 py-2 rounded-lg border border-slate-300" name="service">
@@ -351,6 +352,29 @@
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Quote form SMS submission
+    const quoteForm = document.getElementById('quoteForm');
+    if (quoteForm) {
+      quoteForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(quoteForm);
+        const getValue = (key) => {
+          const value = formData.get(key);
+          return value && value.toString().trim().length ? value.toString().trim() : '';
+        };
+        const entries = [
+          (() => { const name = getValue('name'); return name ? `Name: ${name}` : null; })(),
+          (() => { const phone = getValue('phone'); return phone ? `Phone: ${phone}` : null; })(),
+          (() => { const service = getValue('service'); return service ? `Service: ${service}` : null; })(),
+          (() => { const notes = getValue('notes'); return notes ? `Notes: ${notes}` : null; })()
+        ].filter(Boolean);
+        entries.push('Please contact me about a Fastmove Boreholes quote.');
+        const smsBody = encodeURIComponent(entries.join('\n'));
+        const smsLink = `sms:+27790485777?body=${smsBody}`;
+        window.location.href = smsLink;
+      });
+    }
   </script>
 </body>
 </html>
