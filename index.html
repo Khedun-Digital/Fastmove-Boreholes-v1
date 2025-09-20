@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fastmove Boreholes | Borehole Drilling, Pumps & Water Testing — Pietermaritzburg</title>
+  <meta name="description" content="Hydro-siting, drilling, test-pumping, solar pumps, tanks & filtration across PMB & KZN. WhatsApp +27 79 048 5777." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Archivo+Narrow:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#006400',
+            secondary: '#228B22',
+            accent: '#FAF5EB',
+            highlight: '#0F2614'
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'system-ui', 'sans-serif'],
+            narrow: ['Archivo Narrow', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            card: '0 8px 24px rgba(0,0,0,0.08)'
+          },
+          borderRadius: {
+            xl2: '1rem'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    .section-divider{position:relative;padding-bottom:.5rem;margin-bottom:1.25rem}
+    .section-divider::after{content:"";position:absolute;left:0;bottom:0;width:4rem;height:3px;background:linear-gradient(90deg,#006400,#228B22)}
+    .hero-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 20%,rgba(0,100,0,.20),transparent),linear-gradient(#FAF5EB,#FFFFFF 60%);z-index:-1}
+    .glass{backdrop-filter:saturate(1.4) blur(8px);background:rgba(255,255,255,0.65)}
+    .accordion[aria-expanded="true"] + .panel{max-height:320px}
+    .panel{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  </style>
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Fastmove Boreholes" />
+  <meta property="og:type" content="business.business" />
+  <meta property="og:title" content="Fastmove Boreholes — Your Water. Your Independence." />
+  <meta property="og:description" content="Borehole siting, drilling, pumps, tanks & filtration across PMB & KZN." />
+  <meta property="og:image" content="/assets/og-cover-boreholes.jpg" />
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "additionalType": "https://schema.org/WaterWell",
+    "name": "Fastmove Boreholes",
+    "url": "https://fastmoveboreholes.co.za",
+    "telephone": "+27-79-048-5777",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "19 Syndicate",
+      "addressLocality": "Pietermaritzburg",
+      "addressRegion": "KwaZulu-Natal",
+      "postalCode": "3201",
+      "addressCountry": "ZA"
+    },
+    "areaServed": "ZA-KZN",
+    "openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-15:00"
+  }
+  </script>
+</head>
+<body class="font-body text-slate-800 bg-accent">
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-secondary grid place-items-center text-white shadow">
+          <i class="fa-solid fa-water"></i>
+        </div>
+        <div class="leading-tight">
+          <div class="font-heading font-semibold tracking-tight text-slate-900">FASTMOVE <span class="font-narrow tracking-wide text-primary">BOREHOLES</span></div>
+          <div class="text-xs text-slate-500">Pietermaritzburg • KZN</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a class="nav-link text-sm hover:text-primary" href="#services">Services</a>
+        <a class="nav-link text-sm hover:text-primary" href="#process">Process</a>
+        <a class="nav-link text-sm hover:text-primary" href="#faqs">FAQs</a>
+        <a class="nav-link text-sm hover:text-primary" href="#about">About</a>
+        <a class="nav-link text-sm hover:text-primary" href="#contact">Contact</a>
+        <a class="inline-flex items-center gap-2 text-sm bg-primary text-white px-4 py-2 rounded-xl2 shadow hover:bg-secondary" href="https://wa.me/27790485777" target="_blank" rel="noopener">Get a Quote <i class="fa-brands fa-whatsapp text-base"></i></a>
+      </nav>
+      <button id="menuBtn" aria-label="Open menu" aria-controls="mnav" aria-expanded="false" class="md:hidden p-2 rounded hover:bg-slate-100">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+    <div id="mnav" class="md:hidden border-t border-slate-200 hidden">
+      <div class="px-4 py-3 grid gap-2 bg-white">
+        <a class="block py-2" href="#services">Services</a>
+        <a class="block py-2" href="#process">Process</a>
+        <a class="block py-2" href="#faqs">FAQs</a>
+        <a class="block py-2" href="#about">About</a>
+        <a class="block py-2" href="#contact">Contact</a>
+        <a class="inline-flex items-center justify-center gap-2 text-sm bg-primary text-white px-4 py-2 rounded-xl2 shadow" href="https://wa.me/27790485777" target="_blank" rel="noopener">WhatsApp a Quote<i class="fa-brands fa-whatsapp text-base"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="pt-28 pb-16 relative hero-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7">
+          <h1 class="font-heading text-4xl sm:text-5xl font-bold leading-tight text-highlight">
+            Your Water. Your Independence.
+          </h1>
+          <p class="mt-4 text-xl text-slate-700 max-w-2xl">
+            Borehole siting, drilling, test-pumping, pumps, tanks & filtration for homes, farms and estates across PMB & KZN.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://wa.me/27790485777" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-white px-5 py-3 rounded-xl2 shadow hover:bg-secondary">
+              <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp a Quote
+            </a>
+            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl2 border border-primary text-primary hover:bg-primary/10">
+              <i class="fa-regular fa-calendar-check"></i> Book Site Survey
+            </a>
+          </div>
+          <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-primary"></i> Registered & Insured</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-helmet-safety text-primary"></i> SANS‑aligned practices</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-gauge-high text-primary"></i> Test‑pumping & reports</li>
+          </ul>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="glass rounded-2xl p-6 shadow-card">
+            <h3 class="font-heading text-xl text-highlight">Quick Quote</h3>
+            <p class="text-sm text-slate-600">Prefer messaging? Use WhatsApp or send a request here.</p>
+            <form class="mt-4 grid gap-3" method="get" action="#">
+              <input class="px-3 py-2 rounded-lg border border-slate-300" name="name" placeholder="Full Name" />
+              <input class="px-3 py-2 rounded-lg border border-slate-300" name="phone" placeholder="Phone" />
+              <select class="px-3 py-2 rounded-lg border border-slate-300" name="service">
+                <option value="">Select Service</option>
+                <option>Hydro‑Siting & Survey</option>
+                <option>Borehole Drilling & Casing</option>
+                <option>Development & Test Pumping</option>
+                <option>Pump Systems (AC & Solar)</option>
+                <option>Tanks, Filtration & Treatment</option>
+                <option>Water Quality Testing</option>
+                <option>Borehole Rehabilitation</option>
+                <option>Maintenance SLAs</option>
+              </select>
+              <textarea class="px-3 py-2 rounded-lg border border-slate-300" rows="3" name="notes" placeholder="Notes / Water needs"></textarea>
+              <button class="inline-flex items-center justify-center gap-2 bg-primary text-white px-4 py-2 rounded-xl2 hover:bg-secondary" type="submit">
+                <i class="fa-regular fa-paper-plane"></i> Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-divider font-heading text-3xl text-highlight">Our Services</h2>
+      <p class="text-lg text-slate-700 max-w-3xl">End‑to‑end groundwater solutions, tailored to your site and demand.</p>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Service cards -->
+        <article class="service-card p-6 bg-accent rounded-2xl shadow-card">
+          <i class="fa-solid fa-map-location-dot text-primary text-2xl"></i>
+          <h3 class="mt-3 font-heading text-xl text-highlight">Hydro‑Siting & Survey</h3>
+          <p class="text-slate-700 text-sm">Desktop & on‑site assessment to identify viable drilling positions.</p>
+        </article>
+        <article class="service-card p-6 bg-accent rounded-2xl shadow-card">
+          <i class="fa-solid fa-bore-hole text-primary text-2xl"></i>
+          <h3 class="mt-3 font-heading text-xl text-highlight">Drilling & Casing</h3>
+          <p class="text-slate-700 text-sm">Rotary/air drilling, steel or PVC casing, gravel pack and sanitary seal.</p>
+        </article>
+        <article class="service-card p-6 bg-accent rounded-2xl shadow-card">
+          <i class="fa-solid fa-gauge text-primary text-2xl"></i>
+          <h3 class="mt-3 font-heading text-xl text-highlight">Development & Test</h3>
+          <p class="text-slate-700 text-sm">Step/constant‑rate tests with recovery and yield recommendation.</p>
+        </article>
+        <article class="service-card p-6 bg-accent rounded-2xl shadow-card">
+          <i class="fa-solid fa-solar-panel text-primary text-2xl"></i>
+          <h3 class="mt-3 font-heading text-xl text-highlight">Pumps (AC & Solar)</h3>
+          <p class="text-slate-700 text-sm">Sized to tested yield; controllers/VSD; clean commissioning.</p>
+        </article>
+        <article class="service-card p-6 bg-accent rounded-2xl shadow-card">
+          <i class="fa-solid fa-water text-primary text-2xl"></i>
+          <h3 class="mt-3 font-heading text-xl text-highlight">Tanks & Filtration</h3>
+          <p class="text-slate-700 text-sm">Poly tanks, stands, sediment/carbon/UV, iron/manganese treatment.</p>
+        </article>
+        <article class="service-card p-6 bg-accent rounded-2xl shadow-card">
+          <i class="fa-solid fa-flask text-primary text-2xl"></i>
+          <h3 class="mt-3 font-heading text-xl text-highlight">Water Quality Testing</h3>
+          <p class="text-slate-700 text-sm">Microbiological & chemical testing via accredited labs.</p>
+        </article>
+        <article class="service-card p-6 bg-accent rounded-2xl shadow-card">
+          <i class="fa-solid fa-screwdriver-wrench text-primary text-2xl"></i>
+          <h3 class="mt-3 font-heading text-xl text-highlight">Rehabilitation</h3>
+          <p class="text-slate-700 text-sm">Unblocking, chlorination, redevelopment & screen cleaning.</p>
+        </article>
+        <article class="service-card p-6 bg-accent rounded-2xl shadow-card">
+          <i class="fa-solid fa-clipboard-check text-primary text-2xl"></i>
+          <h3 class="mt-3 font-heading text-xl text-highlight">Maintenance SLAs</h3>
+          <p class="text-slate-700 text-sm">Planned inspections with logs, priority call‑outs, discounted spares.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-divider font-heading text-3xl text-highlight">Our Process</h2>
+      <ul class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <li class="p-6 bg-white rounded-2xl shadow-card">
+          <div class="font-heading text-lg text-highlight">1) Survey</div>
+          <p class="text-sm text-slate-700">Hydro‑siting & quote with GPS pin.</p>
+        </li>
+        <li class="p-6 bg-white rounded-2xl shadow-card">
+          <div class="font-heading text-lg text-highlight">2) Drill & Case</div>
+          <p class="text-sm text-slate-700">Per‑meter drilling, casing, gravel pack & seal.</p>
+        </li>
+        <li class="p-6 bg-white rounded-2xl shadow-card">
+          <div class="font-heading text-lg text-highlight">3) Develop & Test</div>
+          <p class="text-sm text-slate-700">Step & constant‑rate tests, recovery & logs.</p>
+        </li>
+        <li class="p-6 bg-white rounded-2xl shadow-card">
+          <div class="font-heading text-lg text-highlight">4) Pump & Power</div>
+          <p class="text-sm text-slate-700">AC or solar pump sized to yield; controls.</p>
+        </li>
+        <li class="p-6 bg-white rounded-2xl shadow-card">
+          <div class="font-heading text-lg text-highlight">5) Treat & Store</div>
+          <p class="text-sm text-slate-700">Tanks, filtration & treatment as needed.</p>
+        </li>
+        <li class="p-6 bg-white rounded-2xl shadow-card">
+          <div class="font-heading text-lg text-highlight">6) Maintain</div>
+          <p class="text-sm text-slate-700">Monitoring, servicing & documentation.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs" class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-divider font-heading text-3xl text-highlight">Frequently Asked Questions</h2>
+      <div class="mt-6 divide-y divide-slate-200">
+        <button class="accordion w-full text-left py-4 font-medium" aria-expanded="false">How deep will my borehole be?</button>
+        <div class="panel"><p class="pb-4 text-slate-700">Depth varies by geology and siting. We confirm per‑meter costs after survey and estimate ranges accordingly.</p></div>
+        <button class="accordion w-full text-left py-4 font-medium" aria-expanded="false">Do you handle test‑pumping and reports?</button>
+        <div class="panel"><p class="pb-4 text-slate-700">Yes. We perform step & constant‑rate tests and provide a yield recommendation with logs.</p></div>
+        <button class="accordion w-full text-left py-4 font-medium" aria-expanded="false">Can I run the system on solar?</button>
+        <div class="panel"><p class="pb-4 text-slate-700">Absolutely. We size solar pumps and arrays to your yield and daily demand.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-divider font-heading text-3xl text-highlight">About Fastmove Boreholes</h2>
+      <p class="mt-4 text-lg text-slate-700">We provide end‑to‑end groundwater solutions across Pietermaritzburg & KZN. Our team drills efficiently, sizes your pump to the tested yield, and hands over a system that’s easy to live with and maintain. Values: <span class="font-medium">Professionalism</span>, <span class="font-medium">Efficiency</span>, <span class="font-medium">Transparency</span>, <span class="font-medium">Safety</span>, <span class="font-medium">Sustainability</span>.</p>
+      <div class="mt-6 p-5 bg-white rounded-2xl shadow-card">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary grid place-items-center text-white">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div>
+            <div class="font-heading text-highlight">Joachim Ruzwe</div>
+            <div class="text-sm text-slate-600">Director</div>
+          </div>
+        </div>
+        <blockquote class="mt-3 text-slate-700 text-sm">“Clean sites, clear communication, and systems built to last.”</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-divider font-heading text-3xl text-highlight">Contact & Location</h2>
+      <div class="mt-6 grid lg:grid-cols-2 gap-8">
+        <div class="space-y-3">
+          <p class="text-slate-700"><i class="fa-solid fa-location-dot text-primary"></i> 19 Syndicate, Pietermaritzburg, 3201</p>
+          <p class="text-slate-700"><i class="fa-solid fa-phone text-primary"></i> <a class="underline hover:text-primary" href="tel:+27790485777">+27 79 048 5777</a></p>
+          <p class="text-slate-700"><i class="fa-solid fa-envelope text-primary"></i> <a class="underline hover:text-primary" href="mailto:hello@fastmoveboreholes.co.za">hello@fastmoveboreholes.co.za</a></p>
+          <p class="text-slate-700"><i class="fa-solid fa-clock text-primary"></i> Mon–Fri 07:00–18:00 • Sat 08:00–15:00</p>
+          <div class="flex gap-3 pt-2">
+            <a href="https://wa.me/27790485777" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-xl2 hover:bg-secondary"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+            <a href="https://maps.google.com/maps?q=19%20Syndicate%2C%20Pietermaritzburg%2C%203201&output=embed" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl2 border border-primary text-primary hover:bg-primary/10"><i class="fa-solid fa-map"></i> Get Directions</a>
+          </div>
+        </div>
+        <div class="aspect-video rounded-2xl overflow-hidden shadow-card">
+          <iframe title="Map" class="w-full h-full" loading="lazy" src="https://maps.google.com/maps?q=19%20Syndicate%2C%20Pietermaritzburg%2C%203201&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="text-sm text-slate-600">© <span id="year"></span> Fastmove Boreholes. All rights reserved.</div>
+        <div class="flex items-center gap-4 text-slate-600">
+          <a href="#services" class="hover:text-primary">Services</a>
+          <a href="#process" class="hover:text-primary">Process</a>
+          <a href="#faqs" class="hover:text-primary">FAQs</a>
+          <a href="#contact" class="hover:text-primary">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/27790485777" target="_blank" rel="noopener" class="fixed bottom-4 right-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white shadow-lg hover:bg-secondary" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Updated file structure for GitHub Pages hosting -->
+  <!-- Ensure all assets are referenced correctly -->
+
+  <script>
+    // Mobile nav toggle
+    const btn = document.getElementById('menuBtn');
+    const mnav = document.getElementById('mnav');
+    if (btn) btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      mnav.classList.toggle('hidden');
+    });
+
+    // Accordion
+    document.querySelectorAll('.accordion').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        const panel = btn.nextElementSibling;
+        if (panel) {
+          panel.style.maxHeight = expanded ? '0' : panel.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
